@@ -1,0 +1,56 @@
+package com.app.restcontroller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.app.entity.Student;
+import com.app.response.StudentResponse;
+import com.app.service.StudentServiceImpl;
+
+@RestController
+@RequestMapping("/v1/api/student")
+public class StudenRestController {
+	
+	@Autowired
+	StudentServiceImpl studentImpl;
+	
+	//Create student details
+	@PostMapping("/create")
+	public StudentResponse createStudentDetails(@RequestBody Student stu) {
+		StudentResponse student = studentImpl.createStudent(stu);
+		return student;
+	}
+	
+	// get student details based on stuId
+	@GetMapping("/getStudent/{id}")
+	public StudentResponse getStudentResponseBasedOnId(@PathVariable Integer id) {
+		StudentResponse studentResponseBasedOnId = studentImpl.getStudentResponseBasedOnId(id);
+		return studentResponseBasedOnId;
+	}
+	
+	// update student details
+	
+	@PutMapping("/update")
+	public StudentResponse updateStudentDetails(@RequestBody Student stu) {
+		StudentResponse updateStudentDetails = studentImpl.updateStudentDetails(stu);
+		return updateStudentDetails;
+	}
+	
+	//Remove Student Details
+	@DeleteMapping("/remove/{id}")
+	public void removingStudentBasedonId(@PathVariable Integer id) {
+		
+		studentImpl.removeStudentById(id);
+	}
+	
+	
+	
+
+}

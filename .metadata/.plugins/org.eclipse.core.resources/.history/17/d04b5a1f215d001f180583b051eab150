@@ -1,0 +1,4 @@
+spring.application.name=SpringBootMsEurekaServer
+
+server.port=9781
+eureka.client.fetch-registry=false

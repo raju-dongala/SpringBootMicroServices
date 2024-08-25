@@ -1,0 +1,27 @@
+package com.app.restcontroller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.app.response.StudentResponse;
+import com.app.service.StudentServiceImpl;
+
+@RestController
+@RequestMapping("/v1/api/student")
+public class StudenRestController {
+	
+	@Autowired
+	StudentServiceImpl studentImpl;
+	
+	// get student details based on stuId
+	@GetMapping("{id}")
+	public StudentResponse getStudentResponseBasedOnId() {
+		studentImpl.getStudentResponseBasedOnId(null)
+	}
+	
+	
+	
+
+}

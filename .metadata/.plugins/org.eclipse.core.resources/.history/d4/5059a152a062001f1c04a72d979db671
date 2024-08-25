@@ -1,0 +1,27 @@
+package com.app.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.app.entity.Student;
+import com.app.repo.StudentRepo;
+import com.app.response.StudentResponse;
+
+public class StudentServiceImpl implements IStudentService {
+	
+	@Autowired
+	StudentRepo stuRepo;
+
+	@Override
+	public StudentResponse getStudentResponseBasedOnId(Integer id) {
+		
+		Student orElseThrow = stuRepo.findById(id).orElseThrow();
+		
+		
+		
+		
+		
+	}
+	
+	
+
+}

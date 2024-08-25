@@ -1,0 +1,9 @@
+package com.app.service;
+
+import com.app.response.StudentResponse;
+
+public interface IStudentService {
+	
+	public StudentResponse getStudentResponseBasedOnId(Integer id);
+
+}

@@ -1,0 +1,28 @@
+package com.app.entity;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.Data;
+
+@Data
+@Table(name="student")
+public class Student {
+	
+	@Id
+	@Column(name="studId")
+	private Integer studId;
+	
+	@Column(name="studName")
+	private String studName;
+	
+	@Column(name="emailId")
+	private String emailId;
+	
+	@Column(name="gender")
+	private String gender;
+	
+	@Column(name="bloodGrp")
+	private String bloodGrp;
+
+}
