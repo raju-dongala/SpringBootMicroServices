@@ -1,5 +1,7 @@
 package com.app.response;
 
+import com.app.entity.AddressResponse;
+
 import lombok.Data;
 
 @Data
@@ -14,5 +16,7 @@ public class StudentResponse {
 	private String gender;
 	
 	private String bloodGrp;
+	
+	private AddressResponse addressResponse;
 
 }

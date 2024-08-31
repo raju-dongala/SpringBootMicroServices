@@ -30,4 +30,5 @@ public class Student {
 	@Column(name="bloodGrp")
 	private String bloodGrp;
 
+
 }

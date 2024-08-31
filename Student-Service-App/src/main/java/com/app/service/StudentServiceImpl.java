@@ -36,12 +36,12 @@ public class StudentServiceImpl implements IStudentService {
 
 	@Override
 	public StudentResponse updateStudentDetails(Student stu) {
-		Optional<Student> byId = stuRepo.findById(stu.getStudId());
-		if(byId.isPresent()) {
+		Student orElseThrow = stuRepo.findById(stu.getStudId()).orElseThrow(()->new StudentNotFoundException("Student Not Found"));
+		if(orElseThrow!=null) {
 			Student save = stuRepo.save(stu);
 			return modelMap.map(save, StudentResponse.class);
 		}
-		return null; 
+		return null;		
 	}
 
 	@Override
