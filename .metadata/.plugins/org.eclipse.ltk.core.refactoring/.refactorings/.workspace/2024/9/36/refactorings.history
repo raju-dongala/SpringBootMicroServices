@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 12 resources" deleteContents="true" description="Delete 12 resources" element1="/com.apps" element10="/SpringBootWebService03" element11="/SpringWebMVC-1" element12="/SpringWebMVC-2" element2="/SpringBootDataJpaEx1" element3="/SpringBootDataJpaEx2" element4="/SpringBootDataJPARepository" element5="/SpringBootMsCartService" element6="/SpringBootMsEurekaServer" element7="/SpringBootStudentProject" element8="/SpringBootWebService01" element9="/SpringBootWebService02" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="12" stamp="1725330256833"/>
+</session>
