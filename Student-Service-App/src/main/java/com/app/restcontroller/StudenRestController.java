@@ -1,7 +1,7 @@
 package com.app.restcontroller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.reactive.function.client.WebClient;
 
 import com.app.client.AddressFiegnClient;
 import com.app.entity.AddressResponse;
@@ -31,11 +30,15 @@ public class StudenRestController {
 	@Autowired
 	RestTemplate restTemplate;
 
-	@Autowired
-	WebClient webClient;
+	/*@Autowired
+	WebClient webClient;*/
 
 	@Autowired
 	AddressFiegnClient addressFiegnClient;
+	
+	/*@Value("${my.app.config.server}")
+	String appconfig;*/
+	
 
 	// Create student details
 	@PostMapping("/create")
@@ -103,6 +106,7 @@ public class StudenRestController {
 
 	@GetMapping("/getStudent/{id}")
 	public ResponseEntity<StudentResponse> getStudentResponseFiegnClientBasedOnId(@PathVariable Integer id) {
+		//System.out.println(appconfig);
 
 		StudentResponse studentResponseBasedOnId = studentImpl.getStudentResponseBasedOnId(id);
 

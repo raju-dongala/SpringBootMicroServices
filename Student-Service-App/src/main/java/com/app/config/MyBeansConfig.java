@@ -10,8 +10,8 @@ import org.springframework.web.reactive.function.client.WebClient;
 @Configuration
 public class MyBeansConfig {
 	
-	@Value("${addressservice.base.url}")
-	String addressBaseUrl;
+	/*@Value("${addressservice.base.url}")
+	String addressBaseUrl;*/
 
 	@Bean
 	ModelMapper modelMapper() {
@@ -23,9 +23,9 @@ public class MyBeansConfig {
 		return new RestTemplate();
 	}
 
-	@Bean
+	/*@Bean
 	WebClient webClient() {
 		return WebClient.builder().baseUrl(addressBaseUrl).build();
-	}
+	}*/
 
 }

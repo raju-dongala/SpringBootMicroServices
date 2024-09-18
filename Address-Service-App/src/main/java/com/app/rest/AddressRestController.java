@@ -30,7 +30,6 @@ public class AddressRestController {
 	
 	@PostMapping("/create")
 	public ResponseEntity<AddressResponse> createAddressDetails(@RequestBody Address addr){
-		
 		AddressResponse createAddr = addressImpl.createAddressDetails(addr);
 		return new ResponseEntity<AddressResponse>(createAddr,HttpStatus.CREATED);
 	}

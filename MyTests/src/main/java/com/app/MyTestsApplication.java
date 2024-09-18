@@ -1,0 +1,25 @@
+package com.app;
+
+import java.util.Base64.Encoder;
+
+import org.apache.tomcat.util.codec.binary.Base64;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class MyTestsApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(MyTestsApplication.class, args);
+		
+		String name="Raju";
+		
+		byte[] bytes = name.getBytes();
+		
+		Encoder encoder = java.util.Base64.getEncoder();
+		byte[] encode = encoder.encode(bytes);
+		String s=new String(encode);//UmFqdQ==
+		System.out.println(s);
+	}
+
+}
